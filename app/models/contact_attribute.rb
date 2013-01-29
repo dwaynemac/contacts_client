@@ -1,6 +1,6 @@
 class ContactAttribute < LogicalModel
 
-  AVAILABLE_TYPES = %w(telephone email identification address date_attribute custom_attribute estimated_age)
+  AVAILABLE_TYPES = %w(telephone email identification address date_attribute custom_attribute)
 
   attr_accessor :public, :primary
 
