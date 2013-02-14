@@ -101,6 +101,10 @@ class PadmaContact < LogicalModel
     define_method(type.to_s.pluralize) { self.contact_attributes.reject {|attr| !attr.is_a? type.to_s.camelize.constantize}.sort_by {|x| [x.primary ? 0 : 1, x._id]} }
   end
 
+  def facebook_id
+    self.contact_attributes.select{|attr| attr.is_a?(SocialNetworkId) && attr.category == "facebook"}.first
+  end
+
   def mobiles
     self.contact_attributes.select{|attr| attr.is_a?(Telephone) && attr.category == "mobile"}
   end
