@@ -28,7 +28,7 @@ class PadmaContact < LogicalModel
       :telephone, # Primary telephone (contact attribute)
       :in_active_merge
     ]
-  self.has_many_keys = [:contact_attributes, :attachments]
+  self.has_many_keys = [:contact_attributes, :attachments, :tags]
   self.use_api_key = true
   self.api_key_name = "app_key"
   self.api_key = Contacts::API_KEY
@@ -42,6 +42,7 @@ class PadmaContact < LogicalModel
 
   validates_associated :contact_attributes
   validates_associated :attachments
+  validates_associated :tags
 
   def json_root
     :contact
