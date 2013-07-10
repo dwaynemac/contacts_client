@@ -1,4 +1,6 @@
 class Telephone < ContactAttribute
+  include ActiveModel::Validations::Callbacks
+
   self.attribute_keys = [:_id, :_type, :public, :primary, :category, :value, :contact_id]
   self.hydra = Contacts::HYDRA
   self.resource_path = "/v0/contact_attributes"
@@ -9,6 +11,8 @@ class Telephone < ContactAttribute
 
   attr_accessor :category, :value, :public, :primary
 
+  before_validation :strip_whitespace
+
   validates :value, :numericality => true, :unless => :masked?
 
   def masked?
@@ -18,4 +22,9 @@ class Telephone < ContactAttribute
   def _type
     self.class.name
   end
+
+  private
+    def strip_whitespace
+      self.value = self.value.strip
+    end
 end
