@@ -239,4 +239,20 @@ class PadmaContact < LogicalModel
     end
   end
 
+  def self.find_by_kshema_id(kshema_id)
+    params = { kshema_id: kshema_id}
+    params = self.merge_key(params)
+
+    response = Typhoeus::Request.get(self.resource_uri+'/by_kshema_id', params: params)
+    if response.success?
+      unless response.body == 'null'
+        self.new.from_json(response.body)
+      else
+        return nil
+      end
+    else
+      return nil
+    end
+  end
+
 end
