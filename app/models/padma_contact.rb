@@ -39,6 +39,9 @@ class PadmaContact < LogicalModel
 
   attribute :membership
   attribute :time_slots
+  
+  # setter for adding tags on creation or update
+  attribute :new_tag_names
 
   has_many :contact_attributes
   has_many :attachments
