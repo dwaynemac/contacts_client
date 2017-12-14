@@ -35,6 +35,7 @@ class PadmaContact < LogicalModel
   attribute :professional_training_level
   attribute :derose_id
   attribute :kshema_id
+  attribute :slug
   attribute :first_enrolled_on
 
   attribute :membership
