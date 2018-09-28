@@ -17,7 +17,7 @@ class Email < ContactAttribute
     self.class.name
   end
 
-  validates :value, :email_format => true
+  validates :value, format: { with: URI::MailTo::EMAIL_REGEXP   }
 
   private
     def strip_whitespace
