@@ -16,10 +16,11 @@ class PadmaContact < LogicalModel
   attribute :avatar
   attribute :status
   attribute :local_status # will only be setted if #find specifies account_name
-  attribute :local_statuses
+  attribute :local_statuses # array of all local statuses
   attribute :last_seen_at # will only be setted if #find specifies account_name
   attribute :last_local_status
   attribute :local_teacher
+  attribute :local_teachers # array of all local teachers
   attribute :global_teacher_username
   attribute :level
   attribute :coefficient # will only be setted if #find specifies account_name
