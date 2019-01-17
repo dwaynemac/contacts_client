@@ -48,6 +48,7 @@ class PadmaContact < LogicalModel
   has_many :contact_attributes
   has_many :attachments
   has_many :tags
+  has_many :history_entries
 
   self.enable_delete_multiple = true
 
