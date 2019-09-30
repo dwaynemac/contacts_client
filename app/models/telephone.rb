@@ -12,7 +12,7 @@ class Telephone < ContactAttribute
 
   attr_accessor :category, :value, :public, :primary
 
-  validates :value, format: { with: /\A[\(|\d][\d| |\)\-|\.]{6,16}.*\d\z/ },
+  validates :value, format: { with: /\A[\(|\d|+][\d| |\)\-|\.]{6,16}.*\d\z/ },
                     length: { maximum: 45 }
 
   def masked?
