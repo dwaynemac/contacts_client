@@ -53,7 +53,7 @@ class PadmaContact < LogicalModel
   self.enable_delete_multiple = true
 
   validates_presence_of :first_name
-  validates_inclusion_of :gender, in: %W(male female), allow_blank: true
+  validates_inclusion_of :gender, in: %W(male female non_binary), allow_blank: true
   validates_numericality_of :estimated_age, allow_blank: true
 
   validates_associated :contact_attributes
