@@ -13,6 +13,7 @@ class PadmaContact < LogicalModel
   attribute :last_name
   attribute :gender
   attribute :estimated_age
+  attribute :estimated_age_on
   attribute :avatar
   attribute :status
   attribute :local_status # will only be setted if #find specifies account_name
