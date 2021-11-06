@@ -15,5 +15,13 @@ class HistoryEntry < LogicalModel
   def contact_id
     self.historiable_id
   end
+
+  def id=(value)
+    self._id = value
+  end
+
+  def id
+    self._id
+  end
 end
 
