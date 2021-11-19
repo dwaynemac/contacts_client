@@ -48,6 +48,9 @@ class PadmaContact < LogicalModel
   # accessor for service to cache local version of contact
   attribute :local_contact
 
+  # accessor for service to cache local version of account-contact relationship
+  attribute :current_account_contact
+
   has_many :contact_attributes
   has_many :attachments
   has_many :tags
