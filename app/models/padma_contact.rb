@@ -45,6 +45,9 @@ class PadmaContact < LogicalModel
   # setter for adding tags on creation or update
   attribute :new_tag_names
 
+  # accessor for service to cache local version of contact
+  attribute :local_contact
+
   has_many :contact_attributes
   has_many :attachments
   has_many :tags
